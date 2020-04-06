@@ -36,4 +36,4 @@ cat <(echo -e '<ca>') \
     <(echo -e '</tls-auth>') \
     >> ${CLIENT_DIR}/${CLIENT_NAME}.ovpn
  
-echo -e "Client File Created - ${CLIENT_DIR}/${CLIENT_NAME}.ovpn"
+echo -e "File Created - ${CLIENT_DIR}/${CLIENT_NAME}.ovpn"
