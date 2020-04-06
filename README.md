@@ -1,7 +1,7 @@
 **Simple setup openVPN on VPS/VDS server.** </br >
 **The configuration will be carried out on the example of Ubuntu server 18.04.**
 
-*If you do not have an ssh key, you will need to generate it on the local machine and add the public key to your hosting control panel.*
+* *If you do not have an ssh key, you will need to generate it on the local machine and add the public key to your hosting control panel.*
 
 * *The first time you access the server, you need to update the system:*
 
@@ -180,23 +180,43 @@
    
    >... Initialization Sequence Completed
    
-   `
+   You should also make sure that there is a new network interface named tun0:
    
+   `ifconfig` or `ifconfig tun0`
    
+   Generate client configuration:
    
+   `mkdir /etc/openvpn/client`
    
-
-
-
-
-
+   `cd /etc/openvpn/client`
    
-
-
+   Add [make-vpn.sh](https://github.com/de956/openVPN/blob/master/make-vpn.sh) script to the directory.
    
+   Modify the string to your IP server address:
    
+   `OPENVPN_SERVER="your_ip"`
    
+   Set the execute permission:
    
+   `chmod +x ./make-vpn.sh`
+   
+   Now generate the client file by passing its name in the line parameters:
+   
+   `./make-vpn.sh myopenvpn`
+   
+    Transfer the .ovpn file to the local machine, go to the folder with the file:
+    
+    `sudo openvpn --auth-nocache --config  myopenvpn.ovpn`
+    
+    You can also install the add-on for Network Manager:
+    
+    `sudo apt-get install network-manager-openvpn-gnome`
+    
+    Then create a new connection and import the .ovpn configuration file for VPN !
+    
+    
+    
+    
    
    
    
