@@ -29,6 +29,45 @@ The configuration will be carried out on the example of Ubuntu server 18.04.**
    Login with user account:
 
    `su - user`
+   
+   
+* *UFW setup:*
+   
+   Open SSH Access;
+   
+   :exclamation: If you changed the default port 22 for SSH, also add it to the UFW rule.
+   
+   Also add port 1194/udp for OpenVPN to the rule.
+      
+   `ufw allow OpenSSH`
+   
+   `ufw allow 1194/udp`
+   
+   Edit the config:
+   
+   `nano /etc/default/ufw`
+   
+   Edit the line to 'ACCEPT':
+   
+   >DEFAULT_FORWARD_POLICY="ACCEPT"
+   
+   Enabling UFW (:exclamation: Before enabling UFW, make sure that you open the ports you need):
+   
+   `ufw enable`
+   
+   To view the status of UFW:
+   
+   `ufw status`
+   
+* *Setup SSH:*
+   
+   
+   
+   
+   
+   
+   
+   
 
 
 
