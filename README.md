@@ -128,10 +128,15 @@
    >export KEY_OU="Security" </br >
    
    Create a symlink for openssl.cnf file: </br >
-   * *There may be several different versions of the openssl-x.x.x.cnf configuration file in the / etc / openvpn / easy-rsa directory.*
-   
+   * *There may be several different versions of the openssl-x.x.x.cnf configuration file in the / etc / openvpn / easy-rsa directory.*   
    
    `ln -s openssl-1.0.0.cnf openssl.cnf`
+   
+   * *You may also need to generate openssl certificates:* </br >
+   
+   `openssl req -newkey rsa:2048 -new -nodes -keyout key.pem -out csr.pem`
+   
+   `openssl x509 -req -days 365 -in csr.pem -signkey key.pem -out server.crt`
    
    Load the values:
    
@@ -140,6 +145,42 @@
    The script will execute without errors, we will see the following:
    
    >NOTE: If you run ./clean-all, I will be doing a rm -rf on /etc/openvpn/easy-rsa/keys
+      
+   Now use:
+   
+   `./clean-all`
+   
+   `./build-ca`
+   
+   Generate server certificate files:
+   
+   `cd /etc/openvpn/openvpn-ca/`
+   
+   `./build-key-server server`
+   
+   Generate a strong Diffie-Hellman key:
+   
+   `openssl dhparam -out /etc/openvpn/dh2048.pem 2048`
+   
+   Make more secure TLS integrity verification capabilities of the server and copy them to /etc/openvpn directory:
+   
+   `openvpn --genkey --secret /etc/openvpn/openvpn-ca/keys/ta.key`
+   
+   `cd /etc/openvpn/openvpn-ca/keys`
+   
+   `sudo cp ca.crt ta.key server.crt server.key /etc/openvpn`
+   
+   Let’s start the OpenVPN service:
+   
+   `systemctl start openvpn@server`
+   
+   `systemctl status openvpn@server`
+   
+   There should be no errors in the output, and the final line of the log should report successful work:
+   
+   >... Initialization Sequence Completed
+   
+   `
    
    
    
