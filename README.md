@@ -1,5 +1,5 @@
-**Simple setup openVPN on VPS/VDS server.
-The configuration will be carried out on the example of Ubuntu server 18.04.**
+**Simple setup openVPN on VPS/VDS server.** </br >
+**The configuration will be carried out on the example of Ubuntu server 18.04.**
 
 *If you do not have an ssh key, you will need to generate it on the local machine and add the public key to your hosting control panel.*
 
@@ -34,7 +34,7 @@ The configuration will be carried out on the example of Ubuntu server 18.04.**
    
 * *UFW setup:*
    
-   Open SSH Access </br >
+   Open SSH Access; </br >
    
    :exclamation: If you changed the default port 22 for SSH, also add it to the UFW rule. :exclamation:
    
@@ -80,6 +80,76 @@ The configuration will be carried out on the example of Ubuntu server 18.04.**
 
    >Port 22
    
+   To apply the settings, you must restart the SSH service:
+   
+   `service ssh restart`
+   
+* *Setup OpenVPN:*
+
+   `apt install openvpn easy-rsa`
+   
+   Add or [server.conf](https://github.com/de956/openVPN/blob/master/server.conf) to the directory:
+   
+   /etc/openvpn/server.conf
+   
+   Enable IP forwarding on the server:
+   
+   `echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf`
+   
+   `sysctl -p`
+   
+   View network interface name:
+   
+   `ifconfig`
+   
+   Masquerade the internet traffic coming from the VPN network (10.8.0.0/24) to systems local network interface (eth0). Where 10.8.0.0 is VPN network and eth0 is the network interface of system:
+   
+   `modprobe iptable_nat`
+   
+   `iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE`
+   
+   Adding trusted certificates for servers and clients:
+   
+   `make-cadir /etc/openvpn/openvpn-ca/`
+   
+   `cd /etc/openvpn/openvpn-ca/`
+   
+   Edit vars file:
+   
+   `nano vars`
+   
+   Update the below values as required, but do not leave them empty:
+   
+   >export KEY_COUNTRY="US" </br >
+   >export KEY_PROVINCE="CA" </br >
+   >export KEY_CITY="SanFrancisco" </br >
+   >export KEY_ORG="MyOrg" </br >
+   >export KEY_EMAIL="info@myorg.com" </br >
+   >export KEY_OU="Security" </br >
+   
+   Create a symlink for openssl.cnf file:
+   
+   `ln -s openssl-1.0.0.cnf openssl.cnf`
+   
+   Load the values:
+   
+   `source vars`
+   
+   The script will execute without errors, we will see the following:
+   
+   >NOTE: If you run ./clean-all, I will be doing a rm -rf on /etc/openvpn/easy-rsa/keys
+   
+   
+   
+   
+
+
+
+
+
+   
+
+
    
    
    
