@@ -127,7 +127,9 @@
    >export KEY_EMAIL="info@myorg.com" </br >
    >export KEY_OU="Security" </br >
    
-   Create a symlink for openssl.cnf file:
+   Create a symlink for openssl.cnf file: </br >
+   * *There may be several different versions of the openssl-x.x.x.cnf configuration file in the / etc / openvpn / easy-rsa directory.*
+   
    
    `ln -s openssl-1.0.0.cnf openssl.cnf`
    
