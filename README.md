@@ -76,7 +76,7 @@
 
    It is also recommended that you change the default port 22. </br >
    
-  :exclamation: Use this item with caution; the changed port must be specified in the URW rules. :exclamation:
+  :exclamation: Use this item with caution; the changed port must be specified in the UFW rules. :exclamation:
 
    >Port 22
    
