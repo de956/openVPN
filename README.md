@@ -1,7 +1,7 @@
 **Simple setup openVPN on VPS/VDS server.
 The configuration will be carried out on the example of Ubuntu server 18.04.**
 
-:exclamation: If you do not have an ssh key, you will need to generate it on the local machine and add the public key to your hosting control panel. :exclamation:
+*If you do not have an ssh key, you will need to generate it on the local machine and add the public key to your hosting control panel.*
 
 * *The first time you access the server, you need to update the system:*
 
@@ -13,8 +13,9 @@ The configuration will be carried out on the example of Ubuntu server 18.04.**
 
    `reboot` or `shutdown now -r`
 
-* *If you are a root user, remember that you may lose data and access to the server.* </br >
-   :exclamation: *Therefore, it is recommended to have an individual user:* :exclamation:
+* :exclamation: *If you are a root user, remember that you may lose data and access to the server.* :exclamation: </br >
+
+   *Therefore, it is recommended to have an individual user:*
 
    `apt install sudo`
 
@@ -52,6 +53,7 @@ The configuration will be carried out on the example of Ubuntu server 18.04.**
    >DEFAULT_FORWARD_POLICY="ACCEPT"
    
    Enabling UFW </br >
+   
    :exclamation: Before enabling UFW, make sure that you open the ports you need :exclamation:
    
    `ufw enable`
@@ -73,7 +75,8 @@ The configuration will be carried out on the example of Ubuntu server 18.04.**
    >PermitRootLogin no
 
    It is also recommended that you change the default port 22. </br >
-  :exclamation: Use this item with caution; the changed port must be specified in the URF rules. :exclamation:
+   
+  :exclamation: Use this item with caution; the changed port must be specified in the URW rules. :exclamation:
 
    >Port 22
    
