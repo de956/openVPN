@@ -5,30 +5,30 @@ The configuration will be carried out on the example of Ubuntu server 18.04.**
 
 * *The first time you access the server, you need to update the system:*
 
-`ssh root@server_domain_or_IP`
+   `ssh root@server_domain_or_IP`
 
-`apt update && apt upgrade`
+   `apt update && apt upgrade`
 
-reboot the system if necessary:
+   reboot the system if necessary:
 
-`reboot` or `shutdown now -r`
+   `reboot` or `shutdown now -r`
 
 * :exclamation: *If you are a root user, remember that you may lose data and access to the server.*
 *Therefore, it is recommended to have an individual user:*
 
-`apt install sudo`
+   `apt install sudo`
 
-Add User (where 'user' is the username):
+   Add User (where 'user' is the username):
 
-`adduser user`
+   `adduser user`
 
-Adding a user to the sudo group:
+   Adding a user to the sudo group:
 
-`usermod -aG sudo user`
+   `usermod -aG sudo user`
 
-Login with user account:
+   Login with user account:
 
-`su - user`
+   `su - user`
 
 
 
