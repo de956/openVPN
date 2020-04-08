@@ -230,7 +230,9 @@
     
     More info https://github.com/pivpn/pivpn
     
-    To block ads and statistics, you can use [Pi-hole](https://pi-hole.net/)
+    ---
+    
+    * To block ads and statistics, you can use [Pi-hole](https://pi-hole.net/)
     
     More info https://github.com/pi-hole
     
