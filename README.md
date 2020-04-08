@@ -168,7 +168,7 @@
    
    `cd /etc/openvpn/openvpn-ca/keys`
    
-   `sudo cp ca.crt ta.key server.crt server.key /etc/openvpn`
+   `cp ca.crt ta.key server.crt server.key /etc/openvpn`
    
    Let’s start the OpenVPN service:
    
