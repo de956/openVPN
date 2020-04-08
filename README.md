@@ -216,9 +216,7 @@
     
     ---
     
-    #### Alternative use of openVPN protocol
-    
-    [PiVPN](https://pivpn.io/)
+    *An alternative use of openVPN is:* [PiVPN](https://pivpn.io/)
     
     * PiVPN easier to install and configure and also supports OpenVPN 2.4 / WireGuard.
     
@@ -232,15 +230,12 @@
     
     ---
     
-    * To block ads and statistics, you can use [Pi-hole](https://pi-hole.net/)
+    *To block ads and statistics, you can use:* [Pi-hole](https://pi-hole.net/)
     
-    More info https://github.com/pi-hole
+    To install, run the command:
     
-   
-   
-   
+    `curl -sSL https://install.pi-hole.net | bash`
 
-
-
-
-
+     More info https://github.com/pi-hole/pi-hole
+     
+     [The Big Blocklist Collection](https://firebog.net)
