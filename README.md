@@ -214,8 +214,25 @@
     
     Then create a new connection and import the .ovpn configuration file for VPN !
     
+    ---
     
+    #### Alternative use of openVPN protocol
     
+    [PiVPN](https://pivpn.io/)
+    
+    * PiVPN easier to install and configure and also supports OpenVPN 2.4 / WireGuard.
+    
+    To install, run the command:
+    
+    `apt install openvpn`
+    
+    `curl -L https://install.pivpn.io | bash`
+    
+    More info https://github.com/pivpn/pivpn
+    
+    To block ads and statistics, you can use [Pi-hole](https://pi-hole.net/)
+    
+    More info https://github.com/pi-hole
     
    
    
