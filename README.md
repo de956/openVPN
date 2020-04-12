@@ -204,12 +204,6 @@
    
    `./make-vpn.sh myopenvpn`
    
-    Starting with the opeVPN v2.3.9+ [support](https://community.openvpn.net/openvpn/wiki/Openvpn23ManPage?__cf_chl_jschl_tk__=c4f6c279b59b4de7e4ecc9041f6086894fe7dba0-1586704964-0-AQV7UfAJpnof9Y24fvHKkgRzSzRyTC8nqcb5kdT5nA8RKfR5zkNo1dD-TY5f9xMsU51aiSH5sOZF0jTzLebfpTkqNjxQcp88FOOGGIdAp7rwFQsd9y6ut0gfcxcr3TT6tWTdOuj1mnvx4ZlfzjYKLnLyOinBHyRHA91tzu_Lm5B_X9iuQNwqAyRQS4bZlTdTG8Y5FFx5aZWQ2mduT0ij1kS5Ecv2TDupWIc4zqcePCwzbq14OvoV4gGsK5ZD1Syrts8t2hSanIwaPAz3IQX92bV8vAj98GUD4AFDvnSFb9eDCXN9WpffStfcZsQ2gDNeIQ) for secure DNS queries is
-
-    enabled. To do this, add the following line in the generated .ovpn file:
-
-    `block-outside-dns`
-   
     Transfer the .ovpn file to the local machine, go to the folder with the file:
     
     `sudo openvpn --auth-nocache --config  myopenvpn.ovpn`
