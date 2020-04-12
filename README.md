@@ -214,6 +214,11 @@
     
     Then create a new connection and import the .ovpn configuration file for VPN !
     
+    Starting with the opeVPN v2.3.9+, support for secure DNS queries is
+    enabled. To do this, add the following line in the generated .ovpn file:
+    
+    `block-outside-dns`
+    
     ---
     
 * *An alternative use of openVPN is:* [PiVPN](https://pivpn.io/)
@@ -239,3 +244,14 @@
      More info https://github.com/pi-hole/pi-hole
      
      [The Big Blocklist Collection](https://firebog.net)
+     
+     ---
+     
+* *It is possible to use DNS over TLS (DoT) encryption:*
+     
+     [Stubby](https://github.com/getdnsapi/stubby) or [Unbound](https://github.com/NLnetLabs/unbound)
+     
+     :exclamation: Before configuring, you must have your ports free (if for example you are already using Pi-hole) 
+     and update the rules for UFW :exclamation:
+     
+     
