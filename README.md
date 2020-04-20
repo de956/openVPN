@@ -73,6 +73,20 @@
    Disable user root login:
 
    >PermitRootLogin no
+   
+   To prevent open sessions of ssh connections, edit the config / etc / ssh / sshd_config:
+
+   >ClientAliveInterval 600
+
+   >ClientAliveCountMax 3
+
+   To view ssh sessions, use the command:
+
+   `pstree -p`
+
+   Close the session ssh you can use:
+
+  `kill <PID_session>` or use htop `htop`
 
    It is also recommended that you change the default port 22. </br >
    
