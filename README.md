@@ -74,7 +74,7 @@
 
    >PermitRootLogin no
    
-   To prevent open sessions of ssh connections, edit the config:
+   To prevent open sessions of ssh connections:
 
    >ClientAliveInterval 600
 
@@ -234,10 +234,6 @@
     
     `screen`
     
-    >...
-    >Capabilities:
-    >+copy +remote-detach +power-detach +multi-attach +multi-user +font +color-256 +utf8 +rxvt +builtin-telnet
-    >...
     >...[Press Space or Return to end.]
     
     After entering a space, enter the same command:
