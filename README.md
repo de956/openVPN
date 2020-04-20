@@ -98,6 +98,10 @@
    
    `service ssh restart`
    
+   If the port is changed, the ssh connection should look like this:
+   
+   `ssh user@server -pPORT`
+   
 * *Setup OpenVPN:*
 
    `apt install openvpn easy-rsa`
