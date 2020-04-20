@@ -222,6 +222,36 @@
     
     `sudo openvpn --auth-nocache --config  myopenvpn.ovpn`
     
+    Use 'screen' to start and exit the console:
+    
+    `sudo apt install screen`
+    
+    Start screen:
+    
+    `screen`
+    
+    >...
+    >Capabilities:
+    >+copy +remote-detach +power-detach +multi-attach +multi-user +font +color-256 +utf8 +rxvt +builtin-telnet
+    >...
+    >...[Press Space or Return to end.]
+    
+    After entering a space, enter the same command:
+    
+    `sudo openvpn --auth-nocache --config  myopenvpn.ovpn`
+    
+    Enter 'Ctrl + A' then 'Ctrl + D'
+    
+    >[detached from 15972.pts-0.raspberrypi]
+    
+    Now you can close the console, and the running process will continue to work.
+    
+    To return to the session screen:
+    
+    `screen -r`
+    
+    [More info screen](https://www.gnu.org/software/screen/manual/screen.html)
+    
     You can also install the add-on for Network Manager:
     
     `sudo apt-get install network-manager-openvpn-gnome`
