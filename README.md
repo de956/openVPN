@@ -75,8 +75,6 @@
    >PermitRootLogin no
    
    To prevent open sessions of ssh connections, edit the config:
-   
-   `nano/etc/ssh/sshd_config`
 
    >ClientAliveInterval 600
 
