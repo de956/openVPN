@@ -75,6 +75,18 @@
    
    `ssh-copy-id pi@your_server_ip`
    
+   * If you get an error during authorization:
+   
+   >sign_and_send_pubkey: signing failed: agent refused operation
+
+   Run on the client machine, that will add the SSH key to the agent:
+   
+   `ssh-add`
+
+   Confirm (again on the client) that it was indeed added:
+   
+   `ssh-add -l`
+   
    Open using your preferred editor (in this case nano):
 
    `nano /etc/ssh/sshd_config`
