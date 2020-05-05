@@ -29,8 +29,7 @@
 
    Login with user account:
 
-   `su - user`
-   
+   `su - user`   
    
 * *UFW setup:*
    
@@ -63,6 +62,20 @@
    `ufw status`
    
 * *Setup SSH:*
+
+   * If the ssh key was added when creating the server, then this step does not need to be performed.
+   * Proceed to the next step and edit the `sshd_config` as described below.
+   
+   Logging on with an ssh key is more secure. Generate the key on the local machine:
+   
+   `ssh-keygen`
+   
+   By default, the key is available in the user's home folder (/.ssh/id_rsa).
+   Adding an ssh key to the server:
+   
+   `ssh-copy-id pi@your_server_ip`
+   
+   Open using your preferred editor (in this case nano):
 
    `nano /etc/ssh/sshd_config`
 
