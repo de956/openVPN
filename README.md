@@ -315,7 +315,7 @@
      
      [Stubby](https://github.com/getdnsapi/stubby) or [Unbound](https://github.com/NLnetLabs/unbound)
      
-     :exclamation: Before configuring, you must have your ports free (if for example you are already using Pi-hole) 
+     :exclamation: Before configuring, you must have your ports open (if for example you are already using Pi-hole) 
      and update the rules for UFW :exclamation:
      
      
